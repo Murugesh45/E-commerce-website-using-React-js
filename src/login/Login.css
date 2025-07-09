@@ -1,0 +1,99 @@
+.log{
+    background-image: url("https://img.freepik.com/free-photo/black-friday-sales-sign-neon-light_23-2151833076.jpg?semt=ais_hybrid&w=740");
+    background-size: cover;
+    background-position: center;
+    height: 100vh ;
+    padding-top: 100px;
+        
+    
+    
+}
+
+
+
+.input1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:  auto;
+    box-shadow: 0 0 10px green;
+    border: 1px solid green;
+    width: 300px;
+    padding: 30px 50px;
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+    
+    
+
+}
+
+.text::placeholder{
+    font-weight: bold;
+}
+ .input1 h1{
+    color: red;
+    margin: 10px auto;
+
+}
+.text{
+    padding: 13px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 0 10px grey;
+    outline: none;
+    border: 1px solid salmon;
+
+    
+    margin: 20px ;
+}
+.pass{ 
+    padding: 13px;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: 0 0 10px gray;
+    border: 1px solid salmon;
+
+    outline: none;
+    margin: 10px;
+
+}
+.pass::placeholder{
+    font-weight: bold;
+}
+.input1 button{
+    padding:  10px 15px;
+    width: 100%;
+    margin: 20px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    
+
+    
+}
+.input1 button:hover{
+    background-color: red;
+    transition: .5s ease-in-out;
+
+}
+ .input1 p a{
+    margin-left: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+}
+.input1 p{
+    color: white;
+}
+@media(max-width:500px){
+    .log{
+        padding: 200px 50px;
+        margin: auto ;
+        height: 60vh;
+    }
+    .input1{
+        width: 175px;
+    }
+}

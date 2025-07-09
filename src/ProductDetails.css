@@ -1,0 +1,36 @@
+.side{
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 0 10px black;
+    margin: 50px auto;
+    width: 75%;
+    border-radius: 12px;
+}
+.side1{
+    width: 40%;;
+
+}
+.side1 img{
+    width: 100%;
+    height: 300px;
+    transition: all .5s ease-in-out;
+}
+.side1 img:hover{
+    transform: scale(1.1);
+}
+.side2{
+    width: 80%;
+    margin-top: 30px;
+    
+}
+.side2 p{
+    margin: 10px auto;
+}
+.side2 button{
+    padding: 5px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+    
+}

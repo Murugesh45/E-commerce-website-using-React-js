@@ -1,0 +1,14 @@
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 40px;
+}
+.pro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 40px ;
+}
