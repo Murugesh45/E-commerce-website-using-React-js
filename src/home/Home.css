@@ -40,7 +40,7 @@ body{
     justify-content: space-between;
 }
  .content1 .nav3{
-    width: 45vw;
+    width: 47vw;
     
     border: 1px solid ;
     height:420px;
@@ -57,9 +57,9 @@ body{
 
 .nav4{
     border: 1px solid;
-    width: 45vw;
+    width: 47vw;
     height: 200px;
-    margin:  20px 10px;
+    margin:  20px 20px;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnDwzDBvZLhMM7HfWhB9-LrZfJ-OxaUg321Q&s");
     
     background-size: cover;
@@ -71,9 +71,9 @@ body{
 }
 .nav5{
     border: 1px solid;
-    width: 45vw;
+    width: 47vw;
     height: 200px;
-    margin: 10px;
+    margin: 20px;
     background-image: url("https://assets.vogue.com/photos/65b27a7197f83442a161aea9/master/w_1600%2Cc_limit/VO0324_Designers_22.jpg");
     background-position: center;
     background-size: cover;
@@ -113,7 +113,7 @@ body{
 .center{
     display: flex;
     justify-content: space-evenly;
-    margin: 10px auto 10px auto;
+    margin: 30px auto;
     padding: 10px;
     gap:20px;
     
@@ -230,6 +230,16 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+ }
+ .content1 .nav3{
+    margin: 20px 10px;
+ }
+ .nav4{
+    margin: 20px 10px;
+ }
+ .nav5{
+     margin: 20px 10px;
+
  }
  
  
