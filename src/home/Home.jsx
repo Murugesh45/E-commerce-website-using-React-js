@@ -49,14 +49,7 @@ function Home() {
 
             </div>
         </div>
-        <div className="center">
-            <div className="center1"></div>
-            <div className="center2"></div>
-        </div>
-         <div className="center">
-            <div className="center1"></div>
-            <div className="center2"></div>
-        </div>
+        
          <div className="center cen">
             <div className="center1">
                 <img src="https://imageio.forbes.com/specials-images/imageserve/5fd00ea644cd62376ce2b6c1/In-this-photo-illustration-a-13inch-Macbook-pro-seen---/960x0.jpg?height=474&width=711&fit=bounds"/>

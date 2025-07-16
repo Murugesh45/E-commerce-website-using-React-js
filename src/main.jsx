@@ -9,7 +9,7 @@ import reduxStore from './store.js'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={reduxStore}>
-    <BrowserRouter ><App /></BrowserRouter>
+    <BrowserRouter basename="/E-commerce-website-using-React-js"><App /></BrowserRouter>
     </Provider>
     
     
