@@ -121,7 +121,13 @@
 .responsive-menu.active {
     display: flex;
   }
-    
+  .first{
+    display: flex;
+     
+    justify-content: center;
+    width: 50vw;
+  }
+
 
 }
 @media(width > 500px){

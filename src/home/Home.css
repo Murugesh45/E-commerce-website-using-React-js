@@ -193,7 +193,7 @@ body{
 .socials a:hover {
   color: #fff;
 }
-@media(max-width:600px){
+@media(max-width:500px){
     .center{
     display: flex;
     flex-direction: column;
@@ -206,6 +206,7 @@ body{
     
 
 }
+
   
    
    
@@ -213,6 +214,16 @@ body{
     display: flex;
     flex-direction: column-reverse;
    }
+   .content1 p{
+    display: none;
+    
+   }
+   .content1{
+    width:100%;
+   
+   }
+   
+   
 
 
 
