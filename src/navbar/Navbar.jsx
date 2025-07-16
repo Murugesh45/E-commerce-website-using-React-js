@@ -41,6 +41,7 @@ function Navbar() {
       menu.current.style.display="flex";
 
     }
+    
   return (
 
     
@@ -66,11 +67,11 @@ function Navbar() {
 
       <div className="responsive-menu" ref={menuRef} >
         
-        <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
-        <Link to="/Product">Products</Link>
+        <Link to="/" onClick={con}>Home</Link>
+        <Link to="/About" onClick={con}>About</Link>
+        <Link to="/Product" onClick={con}>Products</Link>
         
-        <Link to="/Carts">Carts</Link>
+        <Link to="/Carts" onClick={con}>Carts</Link>
         
         <Link to="/">
           <button onClick={Stop} >Logout</button>
