@@ -106,7 +106,7 @@
         flex-direction: column;
         gap: 20px;
         background:linear-gradient(to right,blue,white);
-        width: 100vw;
+        width: 100%;
         opacity: 0.95;
         position: absolute;
         top: 70px;

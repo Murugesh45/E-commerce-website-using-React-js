@@ -25,6 +25,7 @@
     backdrop-filter: blur(2px);
     
     
+    
 
 }
 
@@ -62,20 +63,22 @@
     font-weight: bold;
 }
 .input1 button{
-    padding:  10px 15px;
+    padding:  12px ;
     width: 100%;
     margin: 20px;
     font-weight: bold;
     background-color: red;
     color: white;
     cursor: pointer;
+    border-radius: 7px;
+    border: none;
     
 
     
 }
 .input1 button:hover{
-    background-color: red;
-    transition: .5s ease-in-out;
+    background-color: green;
+    transition: .5s linear;
 
 }
  .input1 p a{
@@ -97,7 +100,7 @@
     }
     p a{
         display: flex;
-        align-items: center;
+        
         justify-content: center;
         margin-top: 5px;
     }

@@ -93,11 +93,11 @@ function Product() {
     
     <div className='card'>
        
-{
+{ product.length>0 ?
         product.map(function(data){
           return <Card products={data}/>
 
-        }) 
+        }) : <div> <h3>Loading...</h3></div>
 
       
     
