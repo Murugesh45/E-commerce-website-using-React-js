@@ -67,7 +67,7 @@ function Signup() {
 
   }
   return (
-    <div>
+    <div className="form1">
         <form className='form'>
           <h1>Signup</h1>
             <label>Name*</label>
