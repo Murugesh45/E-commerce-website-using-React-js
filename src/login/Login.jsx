@@ -8,16 +8,12 @@ import axios from'axios'
 
 function Login() {
   const dispatch=useDispatch()
-  const[user,setUser]=useState({
-    username:"",
-    password:""
-    
-  })
+  const[username,setUsername]=useState()
+  const[password,setPassword]=useState()
    
-
-  const[valid,setValid]=useState()
-  const[valid1,setValid1]=useState()
-  const[data,setData]=useState()
+ const[error,setError]=useState()
+ const[fail,setFail]=useState()
+ 
 
   
   
@@ -28,24 +24,37 @@ function Login() {
 
   const Start=(e)=>{
     e.preventDefault()
-    var valid=true
-    if(user.username=="" ){
-      setValid("username is required")
-      valid=false
-    }else{setValid("")}
-    if(user.password==""){
-      setValid1("password is required")
-      valid=false
-
-    }else{setValid("")}
     
-    if(valid){
+    
+    
      
-        
+    axios.post("http://localhost:5000/login",{username,password})
+    .then((res)=>{
+      console.log("satisfied")
+      if(res.data=="success"){
+        dispatch(actionObj())
+
+      }
+      if(res.data=="fail"){
+        setError("username is not valid")
+
+      }
+      else{
+        setError("")
+      }
+       if(res.data=="failure"){
+        setFail("wrong password")
+
+      }
+      
+    })
+    .catch(()=>{
+      alert("wrong")
+    })
       
 
-      dispatch(actionObj())
-    }
+      
+    
     
     
   
@@ -57,13 +66,17 @@ function Login() {
       <div className="log1">
          <div className="input1">
             <h1>Login</h1>
-            <input type='text' placeholder='username' className='text' onChange={(e)=>{
-              setUser({...user,username: e.target.value})
+            <input type='text' placeholder='username' className='text' onChange={(e)=>{ setUsername(e.target.value)
+
             }}/>
-            <span style={{color:"red", marginRight:"auto",position:"relative",bottom:"10px"}}>{valid}</span>
+           
+            <span style={{color:"red", marginRight:"150px", position:"relative",bottom:"10px"}}>{error}</span>
+            
           
-            <input type="password" placeholder='password 'className='pass'onChange={(e)=>{setUser({...user,password :e.target.value})}}/>
-             <span style={{color:"red",marginRight:"auto"}}>{valid1}</span>
+            <input type="password" placeholder='password 'className='pass'onChange={(e)=>{setPassword(e.target.value)}}/>
+            
+            <span style={{color:"red",marginRight:"190px"}}>{fail}</span>
+             
             
             <button onClick={Start}>Login</button>
             <p>Don't have an account?<Link to="/signup">create account</Link></p>

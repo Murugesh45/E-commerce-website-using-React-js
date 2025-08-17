@@ -1,95 +1,95 @@
-import React from 'react'
-import "./Signup.css"
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import axios from "axios"
-
+import "./Signup.css";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import axios from "axios";
 
 function Signup() {
-  
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    cpassword: ""
+  });
 
-  
-  let[sign,setSign] =useState()
-  
-  let[sign1,setSign1] =useState()
-  let[sign2,setSign2] =useState()
-  let[sign3,setSign3] =useState()
-  let[sign4,setSign4] =useState()
-  
-  const[name1,setName]=useState({
-    name:"",
-    email:"",
-    password:"",
-    cpassword:""
+  const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
-   
-  })
-  var value=true;
- 
- 
-  const signup=(e)=>{
-    e.preventDefault()
-    if(name1.name===""){
-      setSign("name is required")
-      value=false
-      
-    }else{setSign("")
-      
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.name.trim()) {
+      newErrors.name = "Name is required";
     }
 
-    if(name1.email===""){
-      setSign1("email is required")
-      value=false
-    }else{setSign1("")}
-    if(name1.password===""){
-      setSign2("password is required")
-      value=false
-
-    }else{setSign2("")}
-    if(name1.cpassword===""){
-      setSign3("confirm password is required")
-      value=false
-    }else{setSign3("")}
-    
-    
-    if(value) {
-      
-      setSign4("Account is created")
-     
-      
-
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Email is invalid";
     }
-    
-    
-  
 
+    if (!form.password.trim()) {
+      newErrors.password = "Password is required";
+    } else if (form.password.length < 6) {
+      newErrors.password = "Password must be atleast 6 characters";
+    }
 
-  }
+    if (!form.cpassword.trim()) {
+      newErrors.cpassword = "Confirm password is required";
+    } else if (form.password !== form.cpassword) {
+      newErrors.cpassword = "Passwords do not match";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validate()) {
+      axios.post("http://localhost:5000/signup", form)
+        .then(() => {
+          setSuccessMessage("Account created successfully!");
+          console.log("success")
+        })
+        .catch(() => {
+          alert("Signup failed. Please try again.");
+        });
+    }
+  };
+
   return (
     <div className="form1">
-        <form className='form'>
-          <h1>Signup</h1>
-            <label>Name*</label>
-            <input type="text" onChange={(e)=>{setName({...name1,name: e.target.value})}} />
-            <span style={{color:"red"}}>{sign}</span>
-            <label>Email*</label>
-            <input type="email"onChange={(e)=>{setName({...name1,email: e.target.value})}}/>
-            <span style={{color:"red"}}>{sign1}</span>
-            <label>Password*</label>
-            <input type="password" onChange={(e)=>{setName({...name1,password: e.target.value})}}/>
-            <span style={{color:"red"}}>{sign2}</span>
-            <label>Confirm Password*</label>
-            <input type="password" onChange={(e)=>{setName({...name1,cpassword: e.target.value})}}/>
-            <span style={{color:"red"}}>{sign3}</span>
-            
-            <Link to =""><button onClick={signup}>Create Account</button></Link>
-            <span style={{color:"green", 
-               position:"relative", bottom:"20px"}}>{sign4}</span>
-            <Link to ="/">Back to Login page</Link>
-        </form>
+      <form className="form" onSubmit={handleSubmit}>
+        <h1>Signup</h1>
+
+        <label>Name*</label>
+        <input type="text" name="name" value={form.name} onChange={handleChange} />
+        <span style={{color:"red"}}>{errors.name}</span>
+
+        <label>Email*</label>
+        <input type="email" name="email" value={form.email} onChange={handleChange} />
+        <span  style={{color:"red"}}>{errors.email}</span>
+
+        <label>Password*</label>
+        <input type="password" name="password" value={form.password} onChange={handleChange} />
+        <span style={{color:"red"}}>{errors.password}</span>
+
+        <label>Confirm Password*</label>
+        <input type="password" name="cpassword" value={form.cpassword} onChange={handleChange} />
+        <span  style={{color:"red"}}>{errors.cpassword}</span>
+
+        <button type="submit">Create Account</button>
+        <span className="success" style={{color:"green", marginBottom:"10px", fontWeight:"bold", textAlign:"center"}}>{successMessage}</span>
+
+        <Link to="/">Back to Login page</Link>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
